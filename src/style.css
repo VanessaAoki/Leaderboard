@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.body-container {
+  min-width: 500px;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.leaderboard-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+}
+
+.recent-scores { width: 55%; }
+
+.recent-scores-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+#leaderboard-list {
+  border: 1px solid black;
+}
+
+.add-score > h2 { padding-bottom: 1em; }
+
+#add-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1em;
+}
