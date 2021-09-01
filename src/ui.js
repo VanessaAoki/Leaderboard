@@ -1,4 +1,5 @@
-import { myLeaderboard } from "./leaderboard";
+/* eslint-disable import/prefer-default-export */
+import { myLeaderboard } from './leaderboard';
 
 const renderLeaderboard = () => {
   const list = document.getElementById('leaderboard-list');

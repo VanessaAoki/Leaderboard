@@ -51,7 +51,7 @@ li { list-style: none; }
   gap: 1em;
 }
 
-input { 
+input {
   padding: 0.2em;
   border: 1px solid black;
   border-radius: 0;
