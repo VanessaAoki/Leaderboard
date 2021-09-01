@@ -1,5 +1,5 @@
 import './style.css';
 import './leaderboard';
-import { renderLeaderboard } from './ui';
+import { mainUI } from './ui';
 
-window.addEventListener('DOMContentLoaded', renderLeaderboard);
+window.addEventListener('DOMContentLoaded', mainUI);
