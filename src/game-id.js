@@ -1,5 +1,6 @@
-// API endpoint /games/ 
-// Allowed actions: POST 
+/* eslint-disable import/prefer-default-export */
+// API endpoint /games/
+// Allowed actions: POST
 // Mandatory parameters for POST: name (string)
 
 // Create a new game or get an existing one at localStorage
@@ -19,7 +20,6 @@ const getGameID = async () => {
     .then((json) => json.result);
   return ID;
 };
-
 
 // Exports
 export const gameID = getGameID();

@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { getScores, postScores } from './game-score'
+import { getScores, postScores } from './game-score';
 import { gameID } from './game-id';
 
 gameID.then(() => {
@@ -17,7 +17,7 @@ gameID.then(() => {
       list.appendChild(liScore);
     });
   };
-  
+
   const submitScore = async () => {
     const name = document.getElementById('input-name');
     const score = document.getElementById('input-score');
