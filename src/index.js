@@ -1,5 +1,6 @@
 import './style.css';
-import './leaderboard';
+import './game-id';
+import './game-score';
 import { mainUI } from './ui';
 
 window.addEventListener('DOMContentLoaded', mainUI);
