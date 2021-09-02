@@ -1,10 +1,12 @@
-// /games/ endpoint
-const baseURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
+// API endpoint /games/ 
+// Allowed actions: POST 
+// Mandatory parameters for POST: name (string)
+const gameURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
 
-// create a new game or get an existing one at localStorage
+// Create a new game or get an existing one at localStorage
 const getGameID = () => {
   if (localStorage === undefined) {
-    const gameID = await fetch( baseURL, {
+    const gameID = await fetch( gameURL, {
       method: 'POST',
       body: JSON.stringify({
         name: 'My cool new game'
@@ -15,9 +17,10 @@ const getGameID = () => {
     })
       .then((response) => response.json())
       .then((json) => json.result);
-    return gameID;
+      return gameID;
   } else {
     const gameID = localStorage.gameID;
+    return gameID;
   };
 };
 
