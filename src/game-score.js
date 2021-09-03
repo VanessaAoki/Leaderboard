@@ -3,10 +3,7 @@
 // Allowed actions: POST, GET
 // Mandatory parameters for POST: user (string), score (number)
 // Mandatory parameters for GET: none
-
-import { gameID } from './game-id';
-
-const scoresURL = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameID}/scores/`;
+const scoresURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/GZuf5tkUFwlzMAjaXw1X/scores/';
 
 // Get scores from our game
 const getScores = () => fetch(scoresURL)
@@ -14,16 +11,24 @@ const getScores = () => fetch(scoresURL)
   .then((json) => json.result);
 
 // Create a new score for our game
-const postScores = (user, score) => {
-  fetch(scoresURL, {
+const postScores = (e) => {
+  e.preventDefault();
+  const inputName = document.getElementById('input-name');
+  const inputScore = document.getElementById('input-score');
+  return fetch(scoresURL, {
     method: 'POST',
-    body: JSON.stringify({ user, score }),
+    body: JSON.stringify({
+      user: `${inputName.value}`,
+      score: `${inputScore.value}`,
+    }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
   })
     .then((response) => response.json())
-    .then((json) => json.result);
+    .then(() => {
+      window.location.reload();
+    });
 };
 
 export { getScores, postScores };

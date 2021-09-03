@@ -1,8 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import { getScores, postScores } from './game-score';
-import { gameID } from './game-id';
 
-gameID.then(() => {
+getScores().then(() => {
   const buttonRefresh = document.getElementById('button-refresh');
   const buttonSubmit = document.getElementById('button-submit');
 
@@ -18,15 +17,13 @@ gameID.then(() => {
     });
   };
 
-  const submitScore = async () => {
-    const name = document.getElementById('input-name');
-    const score = document.getElementById('input-score');
-    if (name.value && score.value) postScores(name.value, score.value);
-    name.innerHTML = '';
-    score.innerHTML = '';
-  };
-  buttonRefresh.onclick = renderLeaderboard();
-  buttonSubmit.onclick = submitScore();
+  buttonRefresh.addEventListener('click', () => {
+    renderLeaderboard();
+  });
+  buttonSubmit.addEventListener('click', (...e) => {
+    postScores(...e);
+  });
+  window.addEventListener('DOMContentLoaded', renderLeaderboard());
 });
 
 const mainUI = () => {
