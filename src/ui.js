@@ -12,7 +12,7 @@ getScores().then(() => {
     myLeaderboard.forEach((score) => {
       const liScore = document.createElement('li');
       liScore.classList.add('score-li');
-      liScore.innerHTML = `${score.user}: ${score.score}`;
+      liScore.innerHTML = `<p> ${score.user}</p><p>${score.score}</p>`;
       list.appendChild(liScore);
     });
   };
@@ -42,7 +42,7 @@ const mainUI = () => {
         <h2>Add your score</h2>
         <form action="submit" id="add-form">
           <input type="text" id="input-name" placeholder="Your name">
-          <input type="text" id="input-score" placeholder="Your score">
+          <input type="number" id="input-score" placeholder="Your score">
           <input type="submit" value="Submit" id="button-submit">
         </form>
       </section>

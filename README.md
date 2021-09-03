@@ -20,7 +20,7 @@
 The leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved thanks to the external Leaderboard API service.
 
 <p align="center">
-    <!-- SCREENSHOT TBA -->
+    <img alt="Screenshot" src="./imgs/screenshot.png" width="500">
 </p>
 
 ## Built With
